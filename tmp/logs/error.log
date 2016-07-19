@@ -25,3 +25,219 @@ Request URL: /sites/sites/
 Stack Trace:
 #0 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2016-07-19 08:53:25 Error: [MissingControllerException] Controller class SitesController could not be found.
+Exception Attributes: array (
+  'class' => 'SitesController',
+  'plugin' => NULL,
+)
+Request URL: /sites/sites/
+Stack Trace:
+#0 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-07-19 09:26:06 Error: [MissingActionException] Action SitesController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'SitesController',
+  'action' => 'index',
+)
+Request URL: /sites/sites/
+Stack Trace:
+#0 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-07-19 09:26:13 Error: [MissingActionException] Action SitesController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'SitesController',
+  'action' => 'index',
+)
+Request URL: /sites/sites/
+Stack Trace:
+#0 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-07-19 09:29:04 Error: [MissingActionException] Action SitesController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'SitesController',
+  'action' => 'index',
+)
+Request URL: /sites/sites/
+Stack Trace:
+#0 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-07-19 09:29:06 Error: [MissingActionException] Action SitesController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'SitesController',
+  'action' => 'index',
+)
+Request URL: /sites/sites/
+Stack Trace:
+#0 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-07-19 09:29:10 Error: [MissingActionException] Action SitesController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'SitesController',
+  'action' => 'index',
+)
+Request URL: /sites/sites/
+Stack Trace:
+#0 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-07-19 09:29:53 Error: [MissingActionException] Action SitesController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'SitesController',
+  'action' => 'index',
+)
+Request URL: /sites/sites/
+Stack Trace:
+#0 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest))
+#2 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2016-07-19 10:10:32 Error: [MissingViewException] View file "CategoryNames\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'CategoryNames\\index.ctp',
+)
+Request URL: /sites/CategoryNames
+Stack Trace:
+#0 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CategoryNamesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-07-19 10:11:48 Error: [MissingViewException] View file "CategoryNames\index.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'CategoryNames\\index.ctp',
+)
+Request URL: /sites/category_names
+Stack Trace:
+#0 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Controller\Controller.php(963): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(CategoryNamesController), Object(CakeRequest))
+#4 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2016-07-19 10:23:34 Error: [MissingControllerException] Controller class CategoryController could not be found.
+Exception Attributes: array (
+  'class' => 'CategoryController',
+  'plugin' => NULL,
+)
+Request URL: /sites/category
+Stack Trace:
+#0 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-07-19 10:25:29 Error: [MissingControllerException] Controller class CategoryController could not be found.
+Exception Attributes: array (
+  'class' => 'CategoryController',
+  'plugin' => NULL,
+)
+Request URL: /sites/category
+Stack Trace:
+#0 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-07-19 10:25:30 Error: [MissingControllerException] Controller class CategoryController could not be found.
+Exception Attributes: array (
+  'class' => 'CategoryController',
+  'plugin' => NULL,
+)
+Request URL: /sites/category
+Stack Trace:
+#0 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-07-19 10:25:32 Error: [MissingControllerException] Controller class CategoryController could not be found.
+Exception Attributes: array (
+  'class' => 'CategoryController',
+  'plugin' => NULL,
+)
+Request URL: /sites/category
+Stack Trace:
+#0 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-07-19 10:26:30 Error: [MissingControllerException] Controller class CategoryController could not be found.
+Exception Attributes: array (
+  'class' => 'CategoryController',
+  'plugin' => NULL,
+)
+Request URL: /sites/category
+Stack Trace:
+#0 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-07-19 10:27:08 Error: [MissingControllerException] Controller class CategoryController could not be found.
+Exception Attributes: array (
+  'class' => 'CategoryController',
+  'plugin' => NULL,
+)
+Request URL: /sites/Category
+Stack Trace:
+#0 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-07-19 10:27:14 Error: [MissingControllerException] Controller class CategoryController could not be found.
+Exception Attributes: array (
+  'class' => 'CategoryController',
+  'plugin' => NULL,
+)
+Request URL: /sites/Category
+Stack Trace:
+#0 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-07-19 10:27:18 Error: [MissingControllerException] Controller class CategoryController could not be found.
+Exception Attributes: array (
+  'class' => 'CategoryController',
+  'plugin' => NULL,
+)
+Request URL: /sites/category
+Stack Trace:
+#0 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-07-19 10:27:24 Error: [MissingControllerException] Controller class CategoryController could not be found.
+Exception Attributes: array (
+  'class' => 'CategoryController',
+  'plugin' => NULL,
+)
+Request URL: /sites/Category
+Stack Trace:
+#0 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-07-19 10:27:29 Error: [MissingControllerException] Controller class CategoryController could not be found.
+Exception Attributes: array (
+  'class' => 'CategoryController',
+  'plugin' => NULL,
+)
+Request URL: /sites/category
+Stack Trace:
+#0 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-07-19 10:27:50 Error: [MissingControllerException] Controller class CategoryController could not be found.
+Exception Attributes: array (
+  'class' => 'CategoryController',
+  'plugin' => NULL,
+)
+Request URL: /sites/category
+Stack Trace:
+#0 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-07-19 10:27:51 Error: [MissingControllerException] Controller class CategoryController could not be found.
+Exception Attributes: array (
+  'class' => 'CategoryController',
+  'plugin' => NULL,
+)
+Request URL: /sites/category
+Stack Trace:
+#0 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2016-07-19 10:27:52 Error: [MissingControllerException] Controller class CategoryController could not be found.
+Exception Attributes: array (
+  'class' => 'CategoryController',
+  'plugin' => NULL,
+)
+Request URL: /sites/category
+Stack Trace:
+#0 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
