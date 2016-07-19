@@ -16,6 +16,16 @@
 // Setup a 'default' cache configuration for use in the application.
 Cache::config('default', array('engine' => 'File'));
 
+// composerのautoloadを読み込み
+require ROOT . DS . APP_DIR . DS . 'Vendor' . DS . 'autoload.php';
+
+// CakePHPのオートローダーをいったん削除し、composerより先に評価されるように先頭に追加する
+// https://github.com/composer/composer/commit/c80cb76b9b5082ecc3e5b53b1050f76bb27b127b を参照
+spl_autoload_unregister(array('App', 'load'));
+spl_autoload_register(array('App', 'load'), true, true);
+
+CakePlugin::loadAll();
+
 /**
  * The settings below can be used to set additional paths to models, views and controllers.
  *
