@@ -6,7 +6,6 @@ App::uses('AppController', 'Controller');
  * @property Site $Site
  * @property PaginatorComponent $Paginator
  */
-
 class SitesController extends AppController {
 
 /**
@@ -15,8 +14,7 @@ class SitesController extends AppController {
  * @var array
  */
 	public $components = array('Paginator');
-        //Categoryを宣言
-        public $uses = array('Category');
+
 /**
  * index method
  *
@@ -48,15 +46,6 @@ class SitesController extends AppController {
  * @return void
  */
 	public function add() {
-                
-                $data = $this->Category->find('list', array(
-                'fields' => array('Category.id', 'Category.cat_name'),
-               ));
-              $this->set('category', $data);
-               // $data = $this->Category->find('list');
-               // pr($data);
-               // debug($data);
-                
 		if ($this->request->is('post')) {
 			$this->Site->create();
 			if ($this->Site->save($this->request->data)) {
@@ -66,7 +55,6 @@ class SitesController extends AppController {
 				$this->Flash->error(__('The site could not be saved. Please, try again.'));
 			}
 		}
-                
 	}
 
 /**
@@ -114,4 +102,3 @@ class SitesController extends AppController {
 		return $this->redirect(array('action' => 'index'));
 	}
 }
-
