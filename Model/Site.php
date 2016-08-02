@@ -69,6 +69,7 @@ class Site extends AppModel {
  *
  * @var array
  */
+        /*
 	public $hasMany = array(
 		'Category' => array(
 			'className' => 'Category',
@@ -84,5 +85,5 @@ class Site extends AppModel {
 			'counterQuery' => ''
 		)
 	);
-
+        */
 }

@@ -8,6 +8,13 @@
 			<th><?php echo $this->Paginator->sort('img_src'); ?></th>
 			<th><?php echo $this->Paginator->sort('url'); ?></th>
 			<th><?php echo $this->Paginator->sort('review'); ?></th>
+                        //URL追加
+                        <th><?php //echo $this->Paginator->sort('cat_id1'); ?></th>
+                        <th><?php //echo $this->Paginator->sort('cat_id2'); ?></th>
+                        <th><?php //echo $this->Paginator->sort('cat_id3'); ?></th>
+                        <th><?php //echo $this->Paginator->sort('cat_id4'); ?></th>
+                        <th><?php //echo $this->Paginator->sort('cat_id5'); ?></th>
+                        
 			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -21,8 +28,18 @@
 		<td><?php echo h($site['Site']['img_src']); ?>&nbsp;</td>
 		<td><?php echo h($site['Site']['url']); ?>&nbsp;</td>
 		<td><?php echo h($site['Site']['review']); ?>&nbsp;</td>
+
+                <td><?php //echo h($site['Site']['cat_id1']); ?>&nbsp;</td>
+                <td><?php //echo h($site['Site']['cat_id2']); ?>&nbsp;</td>
+                <td><?php //echo h($site['Site']['cat_id3']); ?>&nbsp;</td>
+                <td><?php //echo h($site['Site']['cat_id4']); ?>&nbsp;</td>
+                <td><?php //echo h($site['Site']['cat_id5']); ?>&nbsp;</td>
+                
 		<td><?php echo h($site['Site']['created']); ?>&nbsp;</td>
 		<td><?php echo h($site['Site']['modified']); ?>&nbsp;</td>
+                
+                
+                
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $site['Site']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $site['Site']['id'])); ?>

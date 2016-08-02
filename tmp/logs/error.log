@@ -345,3 +345,49 @@ Stack Trace:
 #10 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest))
 #11 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #12 {main}
+2016-08-02 06:55:04 Error: [PDOException] SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'site_name' at line 1
+Request URL: /sites/sites/add
+Stack Trace:
+#0 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Model\Datasource\DboSource.php(461): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Model\Datasource\DboSource.php(427): DboSource->_execute('site_name', Array)
+#2 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Model\Datasource\DboSource.php(664): DboSource->execute('site_name', Array, Array)
+#3 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Model\Datasource\DboSource.php(607): DboSource->fetchAll('site_name', Array, Array)
+#4 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Model\Model.php(827): DboSource->query('site_name', Array, Object(Category))
+#5 C:\xampp\htdocs\sites\Controller\SitesController.php(64): Model->__call('site_name', Array)
+#6 C:\xampp\htdocs\sites\Controller\SitesController.php(64): Category->site_name()
+#7 [internal function]: SitesController->add()
+#8 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Controller\Controller.php(491): ReflectionMethod->invokeArgs(Object(SitesController), Array)
+#9 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#10 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SitesController), Object(CakeRequest))
+#11 C:\xampp\htdocs\sites\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#12 {main}
+2016-08-02 07:09:25 Error: Fatal Error (1): Call to a member function site_name() on null in [C:\xampp\htdocs\sites\Controller\SitesController.php, line 64]
+2016-08-02 07:09:25 Error: [FatalErrorException] Call to a member function site_name() on null
+Request URL: /sites/sites/add
+Stack Trace:
+#0 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 64)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 64, Array)
+#2 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 64, Array)
+#3 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-08-02 07:10:54 Error: Fatal Error (1): Call to a member function find() on null in [C:\xampp\htdocs\sites\Controller\SitesController.php, line 64]
+2016-08-02 07:10:54 Error: [FatalErrorException] Call to a member function find() on null
+Request URL: /sites/sites/add
+Stack Trace:
+#0 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 64)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 64, Array)
+#2 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 64, Array)
+#3 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2016-08-02 10:03:53 Error: Fatal Error (1): Call to a member function create() on null in [C:\xampp\htdocs\sites\Controller\SitesController.php, line 106]
+2016-08-02 10:03:53 Error: [FatalErrorException] Call to a member function create() on null
+Request URL: /sites/sites/add
+Stack Trace:
+#0 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Error\ErrorHandler.php(213): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 106)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 106, Array)
+#2 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Core\App.php(970): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 106, Array)
+#3 C:\xampp\htdocs\sites\Vendor\cakephp\cakephp\lib\Cake\Core\App.php(943): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
