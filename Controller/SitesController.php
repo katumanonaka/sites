@@ -22,13 +22,21 @@ class SitesController extends AppController {
  *
  * @return void
  */
-	public function index() {
-		$this->Site->recursive = 0;
-		$this->set('sites', $this->Paginator->paginate());
-                
-                //debug( $this->Paginator->paginate());
-                
-	}
+    public function index() {
+        //$this->Site->recursive = 0;
+        //$this->set('sites', $this->Paginator->paginate());
+
+
+        $result = $this->Site->find('all',array());
+        $this->set('sites', $result);
+
+        //pr($result);
+
+
+
+        //debug( $this->Paginator->paginate());
+
+    }
 
 /**
  * view method
