@@ -71,11 +71,8 @@ class SitesController extends AppController {
                     
                     //debug($data);    //デバッグ表示    
                     
-                    //$this->request->data[Site][cat_id][0];
-                    
-                    //$var = array(10 => '遠藤', '斉藤', '伊藤');
-                    //print_r($var);
-                    
+
+                    //入力したデータを$test01～$test05に入れる
                     $test01 = $this->request->data( 'Site.cat_id.0');
                     $test02 = $this->request->data( 'Site.cat_id.1');
                     $test03 = $this->request->data( 'Site.cat_id.2');
@@ -86,15 +83,16 @@ class SitesController extends AppController {
                     //$test01 = $this->request->data['Site']['cat_id'][0];                    
                     //$test02 = $this->request->data['Site']['cat_id'][1];
                     //$test03 = $this->request->data['Site']['cat_id'][2];
-                    /*
+                    /*デバッグ確認
                     print_r($test01);
                     print_r($test02);                    
                     print_r($test03);
                     print_r($test04);                    
                     print_r($test05);
                     */                  
+                    //データの代入
                     $request = $this->request->data;
-                    
+                    //それぞれにチェックボックスのデータを代入する
                     $request['Site']['cat_id1'] = $test01; 
                     $request['Site']['cat_id2'] = $test02;
                     $request['Site']['cat_id3'] = $test03;
@@ -126,11 +124,49 @@ class SitesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+            
+            $data = $this->Category->find('list', array(
+                'fields' => array('Category.id', 'Category.cat_name'),
+               ));
+              
+                //チェックボックスのそれぞれの名前（カテゴリー名）をセット
+              $this->set('category', $data);
+            
+                //idがあるかどうか
 		if (!$this->Site->exists($id)) {
 			throw new NotFoundException(__('Invalid site'));
 		}
-		if ($this->request->is(array('post', 'put'))) {
-			if ($this->Site->save($this->request->data)) {
+                //タグ一覧を表示する　
+                                             
+//                $test = "アイウエオ";
+//                echo $test;          
+                $request = $this->request->data;
+                    //入力したデータを$test01～$test05に入れる
+                    $test01 = $this->request->data( 'Site.cat_id.0');
+                    $test02 = $this->request->data( 'Site.cat_id.1');
+                    $test03 = $this->request->data( 'Site.cat_id.2');
+                    $test04 = $this->request->data( 'Site.cat_id.3');
+                    $test05 = $this->request->data( 'Site.cat_id.4');
+                    //$test = $this->request->query('Category.review');  
+                    //Hash::get($test, 'Site.cat_id.0');
+                    //$test01 = $this->request->data['Site']['cat_id'][0];                    
+                    //$test02 = $this->request->data['Site']['cat_id'][1];
+                    //$test03 = $this->request->data['Site']['cat_id'][2];
+                    
+                    print_r($test01);
+                    print_r($test02);                    
+                    print_r($test03);
+                    print_r($test04);                    
+                    print_r($test05);
+                    echo $test01;
+                //echo $request['Site']['cat_id1'][0];      
+                //exit;
+                
+		if ($this->request->is(array('post', 'put'))) {                 //データを受け取る
+                    
+                        
+                        
+			if ($this->Site->save($this->request->data)) {          //データをセーブ
 				$this->Flash->success(__('The site has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
@@ -163,4 +199,4 @@ class SitesController extends AppController {
 		return $this->redirect(array('action' => 'index'));
 	}
 }
-
+?>
