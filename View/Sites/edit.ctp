@@ -25,15 +25,6 @@
                                             $editcategory['Site']['cat_id4'],
                                             $editcategory['Site']['cat_id5']),
                         ));
-                
-                
-                
-                
-//                if($editcategory['Site']['cat_id1'] == 1)
-//                {
-//                    
-//                }
-
                 //debug($editcategory['Site']['cat_id1']);
                 //exit;
                 

@@ -70,7 +70,7 @@ class SitesController extends AppController {
             if (!$this->Site->exists($id)) {
 			throw new NotFoundException(__('Invalid site'));
 		}
-                //タグ一覧を表示する
+                //タグ一覧を表示する　
                 
                 
 		if ($this->request->is(array('post', 'put'))) {
