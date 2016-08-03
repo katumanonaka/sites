@@ -14,9 +14,7 @@
                     'label' => '選ぶ',    // チェックボックスのラベル
                     //  'div' => false        // div親要素の有無(true/false)
                 ));
-                */
-                
-                
+                *///指定チェックボックス
                 /*$options = array(
                 2 => 'ajax',
                 6 => 'backbone.js',
@@ -25,8 +23,7 @@
                 );
                 */
                 
-                
-                
+                //チェックボックス配置
                 echo $this->Form->input('cat_id', array(
                 'options' =>$category,
                 'type' => 'select',

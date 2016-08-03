@@ -8,6 +8,35 @@
 		echo $this->Form->input('img_src');
 		echo $this->Form->input('url');
 		echo $this->Form->input('review');
+                //チェックボックスの内容表示
+//                echo $this->Form->input('cat_id1');
+//                echo $this->Form->input('cat_id2');
+//                echo $this->Form->input('cat_id3');
+//                echo $this->Form->input('cat_id4');
+//                echo $this->Form->input('cat_id5');
+//                
+                echo $this->Form->input('cat_id', array(
+                        'options' =>$category,
+                        'type' => 'select',
+                        'multiple'=> 'checkbox',
+                        'selected' => array($editcategory['Site']['cat_id1'],
+                                            $editcategory['Site']['cat_id2'],
+                                            $editcategory['Site']['cat_id3'],
+                                            $editcategory['Site']['cat_id4'],
+                                            $editcategory['Site']['cat_id5']),
+                        ));
+                
+                
+                
+                
+//                if($editcategory['Site']['cat_id1'] == 1)
+//                {
+//                    
+//                }
+
+                //debug($editcategory['Site']['cat_id1']);
+                //exit;
+                
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

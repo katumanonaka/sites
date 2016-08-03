@@ -66,11 +66,18 @@ class SitesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
-		if (!$this->Site->exists($id)) {
+            //idがあるかどうか
+            if (!$this->Site->exists($id)) {
 			throw new NotFoundException(__('Invalid site'));
 		}
+                //タグ一覧を表示する
+                
+                
 		if ($this->request->is(array('post', 'put'))) {
+                    
 			if ($this->Site->save($this->request->data)) {
+                            
+                            
 				$this->Flash->success(__('The site has been saved.'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
