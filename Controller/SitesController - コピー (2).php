@@ -28,7 +28,7 @@ class SitesController extends AppController {
     public function index() {
         //$this->Site->recursive = 0;
         //$this->set('sites', $this->Paginator->paginate());
-        $this->layout = 'bootstrap3';
+		$this->layout = 'bootstrap3';
 
         $result = $this->Site->find('all', array());
         $this->set('sites', $result);
@@ -103,47 +103,16 @@ class SitesController extends AppController {
             $request['Site']['cat_id4'] = $test04;
             $request['Site']['cat_id5'] = $test05;
 
-            //========================================================================================
-            //画像データ保存
-            //========================================================================================
-            //サイト名取得
-            $sitenameid = $this->request->data('Site.site_name');
-            //一時保存画像の名前を保存
-            $img = $this->request->data('Site.img_src.tmp_name');
-            //画像の名前を保存
-            $imgname = $this->request->data('Site.img_src.name');
-            //ファイルパスを保存
-            $uploaddir = "C:" . DS . "xampp" . DS . "htdocs" . DS . "sites" . DS . "webroot" . DS . "upimg" . DS;
-            
-            //idを取得する
-            $iddata = $this->request->data('Site.id');
-            //画像のファイルパス
-            $img_src = IMAGES . $img;
-            //ファイルパス保存
-            $root = "http://localhost/sites/upimg/";
-            //データにファイル名を表示する
-            $request['Site']['img_src'] = "";
-            //データにサイト名を保存する
-            //$request['Site']['site_name'] = $sitenameid;
+            //debug($request);     //データの確認表示する
+            // exit;   //強制終了
             //カテゴリーデータ保存
             $this->set('categorydata', $request);
 
             $this->Site->create();
-                   
+
             //保存
-            if ($this->Site->save($request)) {                      //保存する    
-                //idの取得
-                $id = $this->Site->getLastInsertID();
-                //結果的に使う画像を保存
-                $uploadfile = $uploaddir . "$id.jpg"; //basename($imgname);
-                
-                //ファイル移動
-                move_uploaded_file($img, $uploadfile);   //.$fileName['img']    //$fileName[
-                //画像の名前を更新
-                $this->Site->id = $id;
-                $this->Site->saveField('img_src', "$id.jpg");
-                
-                $this->Flash->success(__('The site has been saved.'));      //保存できた                
+            if ($this->Site->save($request)) {                      //保存する              
+                $this->Flash->success(__('The site has been saved.'));      //保存できた
                 return $this->redirect(array('action' => 'index'));
             } else {
                 $this->Flash->error(__('The site could not be saved. Please, try again.'));
@@ -176,7 +145,6 @@ class SitesController extends AppController {
         //pr($data);
 
         $this->set('editcategory', $data);
-
         if ($this->request->is(array('post', 'put'))) {
             //サイト名、サイト写真、URL、レビューの変更
             $site_name = $this->request->data('Site.site_name');
@@ -204,34 +172,7 @@ class SitesController extends AppController {
             $request['Site']['cat_id3'] = $test03;
             $request['Site']['cat_id4'] = $test04;
             $request['Site']['cat_id5'] = $test05;
-            
-            //========================================================================================
-            //画像データ保存
-            //========================================================================================
-            //$id = find('first', id);
-            //サイト名取得
-            $sitenameid = $this->request->data('Site.site_name');
-            //一時保存する画像の名前を保存
-            $img = $this->request->data('Site.img_src.tmp_name');
-            //画像の名前を保存
-            $imgname = $this->request->data('Site.img_src.name');
-            //ファイルパスを保存
-            $uploaddir = "C:" . DS . "xampp" . DS . "htdocs" . DS . "sites" . DS . "webroot" . DS . "upimg" . DS;
-            //idを取得する
-            $iddata = $this->request->data('Site.id');
-            //画像のファイルパス
-            $img_src = IMAGES . $img;
-            //ファイルパス保存
-            $root = "http://localhost/sites/upimg/";
-            //データにファイル名を表示する
-            $request['Site']['img_src'] = "$iddata.jpg";
-            //結果的に使う画像を保存
-            $uploadfile = $uploaddir . "$iddata.jpg"; //basename($imgname);
-                
-            //画像をファイル移動してID.jpgとして保存している
-            move_uploaded_file($img, $uploadfile);   //.$fileName['img']    //$fileName[
-            
-            $this->set('editcategory', $data);
+
             // if ($this->request->is(array('post', 'put'))) {                 //データを受け取る
             //if ($this->Site->save($this->request->data)) {          //データをセーブ
             if ($this->Site->save($request)) {          //データをセーブ
