@@ -10,7 +10,41 @@
         </div>
 
         <!--  <h2><?php echo __('SitesReport'); ?></h2>-->
-        <div class="sites index col-md-3">
+        <div class="sites index col-md-2">
+            <!--            <div class="list-group">
+                            <a href="#" class="list-group-item active">PHP</a>
+                            <a href="#" class="list-group-item">cakePHP</a>
+                            <a href="#" class="list-group-item">Git</a>
+                            <a href="#" class="list-group-item">CSS</a>
+                            <a href="#" class="list-group-item">Bootstrap</a>
+                        </div>-->
+
+            <div class="panel panel-default">
+                <div class="panel-heading">カテゴリー</div>
+                
+                <div class="panel-body">
+                    <a class="btn btn-default" href="http://localhost/sites/webs" role="button">ALL</a>
+<!--                    <button type="button" class="btn btn-default">ALL</button>-->
+                </div>
+                <div class="panel-body">
+                    <!--カテゴリー1を送る-->
+                    <?php echo $this->Html->link(__('PHP'), array('action' => 'index', 1),array('class' => "btn btn-primary")); ?>
+<!--                    <a class="btn btn-primary" href="#" role="button">PHP</a>
+                    <button type="button" class="btn btn-primary">PHP</button>-->
+                </div>
+                <div class="panel-body">
+                    <?php echo $this->Html->link(__('cakePHP'), array('action' => 'index', 2),array('class' => "btn btn-primary")); ?>
+                </div>
+                <div class="panel-body">
+                    <?php echo $this->Html->link(__('Git'), array('action' => 'index', 3),array('class' => "btn btn-primary")); ?>
+                </div>
+                <div class="panel-body">
+                    <?php echo $this->Html->link(__('CSS'), array('action' => 'index', 4),array('class' => "btn btn-primary")); ?>
+                </div>
+                <div class="panel-body">
+                    <?php echo $this->Html->link(__('Bootstrap'), array('action' => 'index', 5),array('class' => "btn btn-primary")); ?>
+                </div>
+            </div>
 
         </div>
         <!--<div class="sites index col-md-4">-->
@@ -49,11 +83,11 @@
                                 ImageJPEG($out, $file2);                                    //　画像保存
                                 ImageDestroy($in);
                                 ImageDestroy($out);
-                                
+
                                 echo $this->Html->image("../img/{$imgid}.jpg",array('url'=>$site['Site']['url']));      //画像にURLのリンクを貼る
                                 ?>
 
-<!--                                <a href="<?php $site['Site']['url'] ?>" target="_blank"><img src="<?php echo $file2 ?>"></a><br>-->
+                                <!--                                <a href="<?php $site['Site']['url'] ?>" target="_blank"><img src="<?php echo $file2 ?>"></a><br>-->
                             </tr>
 
                             <tr>
@@ -141,62 +175,62 @@
                                 ImageJPEG($out, $file2);                                    //　画像保存
                                 ImageDestroy($in);
                                 ImageDestroy($out);
-                                
+
                                 echo $this->Html->image("../img/{$imgid}.jpg",array('url'=>$site['Site']['url']));      //画像にURLのリンクを貼る
                                 ?>
 
-<!--                                <img src="<?php echo $file2 ?>"><br>-->
+                                <!--                                <img src="<?php echo $file2 ?>"><br>-->
 
-                                        </tr>
+                            </tr>
 
-                                        <tr>
-                                            <td><?php echo h($site['Site']['review']); ?>&nbsp;</td>
-                                        </tr>
+                            <tr>
+                                <td><?php echo h($site['Site']['review']); ?>&nbsp;</td>
+                            </tr>
 
-                                        <!--                        <th><a href="http://qiita.com/BUN/items/403cccad9eaa831e6fd8"></a></th>
-                                                                <td><?php //echo h($site['Site']['cat_id1']); ?>&nbsp;</td>
-                                                                <td><?php //echo h($site['Site']['cat_id2']); ?>&nbsp;</td>
-                                                                <td><?php //echo h($site['Site']['cat_id3']); ?>&nbsp;</td>
-                                                                <td><?php //echo h($site['Site']['cat_id4']); ?>&nbsp;</td>
-                                                                <td><?php //echo h($site['Site']['cat_id5']); ?>&nbsp;</td>-->
+                            <!--                        <th><a href="http://qiita.com/BUN/items/403cccad9eaa831e6fd8"></a></th>
+                                                    <td><?php //echo h($site['Site']['cat_id1']); ?>&nbsp;</td>
+                                                    <td><?php //echo h($site['Site']['cat_id2']); ?>&nbsp;</td>
+                                                    <td><?php //echo h($site['Site']['cat_id3']); ?>&nbsp;</td>
+                                                    <td><?php //echo h($site['Site']['cat_id4']); ?>&nbsp;</td>
+                                                    <td><?php //echo h($site['Site']['cat_id5']); ?>&nbsp;</td>-->
 
-                                        <tr>
-                                            <td class="actions">
-                                                <?php echo $this->Html->link(__('View'), array('action' => 'view', $site['Site']['id'])); ?>
-                                                <!--<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $site['Site']['id'])); ?>-->
-                                                <!--<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $site['Site']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $site['Site']['id']))); ?>-->
-                                            </td>
-                                        </tr>
-                                        </tr>
-                                        </table>
-                                        <?php endforeach; ?>
-                                        </tbody>
-                                        </table>
-                                        <p>
-                                            <?php
-                                            /*
-                                            echo $this->Paginator->counter(array(
-                                            'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-                                            ));*/
-                                            ?>	</p>
-                                        <div class="paging">
-                                            <?php
-                                            /*
-                                            echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
-                                            echo $this->Paginator->numbers(array('separator' => ''));
-                                            echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
-                                            */
-                                            ?>
-                                        </div>
-                                        </div>
+                            <tr>
+                                <td class="actions">
+                                    <?php echo $this->Html->link(__('View'), array('action' => 'view', $site['Site']['id'])); ?>
+                                    <!--<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $site['Site']['id'])); ?>-->
+                                    <!--<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $site['Site']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $site['Site']['id']))); ?>-->
+                                </td>
+                            </tr>
+                        </tr>
+                    </table>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <p>
+                <?php
+                /*
+                echo $this->Paginator->counter(array(
+                'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
+                ));*/
+                ?>	</p>
+            <div class="paging">
+                <?php
+                /*
+                echo $this->Paginator->prev('< ' . __('previous'), array(), null, array('class' => 'prev disabled'));
+                echo $this->Paginator->numbers(array('separator' => ''));
+                echo $this->Paginator->next(__('next') . ' >', array(), null, array('class' => 'next disabled'));
+                */
+                ?>
+            </div>
+        </div>
 
-                                        </div>
-                                        <!--    <div class="actions col-md-4">
-                                                <h3><?php echo __('Actions'); ?></h3>
-                                                <ul>
-                                                    <li><?php echo $this->Html->link(__('New Site'), array('action' => 'add'), array('class'=>'btn btn-success')); ?></li>
-                                                    <li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
-                                                    <li><?php echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
-                                                </ul>
-                                            </div>-->
-                                        </div>
+    </div>
+    <!--    <div class="actions col-md-4">
+            <h3><?php echo __('Actions'); ?></h3>
+            <ul>
+                <li><?php echo $this->Html->link(__('New Site'), array('action' => 'add'), array('class'=>'btn btn-success')); ?></li>
+                <li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
+                <li><?php echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
+            </ul>
+        </div>-->
+</div>

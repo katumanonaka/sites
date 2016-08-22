@@ -26,12 +26,22 @@ class WebsController extends AppController {
      *
      * @return void
      */
-    public function index() {
+    public function index($search = null) {
         //$this->Site->recursive = 0;
         //$this->set('sites', $this->Paginator->paginate());
         $this->layout = 'user';
-
-        $result = $this->Site->find('all', array());
+        if($search == null)
+        {
+            $result = $this->Site->find('all', array());
+        }
+        else
+        {
+           $result = $this->Site->find('all', array('conditions' => array('OR'=> array('Site.cat_id1' => $search , 'Site.cat_id2' => $search , 'Site.cat_id3' => $search , 'Site.cat_id4' => $search , 'Site.cat_id5' => $search))));
+        }
+        //$search = 3;
+        //$result = $this->Site->find('all', array());
+       // $result = $this->Site->find('all', array('conditions' => array('Site.id between ? and ?' =>array(2,5))));
+        //debug($result);
         $this->set('sites', $result);
 
         //pr($result);
