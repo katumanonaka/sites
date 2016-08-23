@@ -36,7 +36,13 @@ class WebsController extends AppController {
         }
         else
         {
-           $result = $this->Site->find('all', array('conditions' => array('OR'=> array('Site.cat_id1' => $search , 'Site.cat_id2' => $search , 'Site.cat_id3' => $search , 'Site.cat_id4' => $search , 'Site.cat_id5' => $search))));
+           $result = $this->Site->find('all', array('conditions' => array(
+                                'OR'=> array(
+                                    'Site.cat_id1' => $search ,
+                                    'Site.cat_id2' => $search ,
+                                    'Site.cat_id3' => $search ,
+                                    'Site.cat_id4' => $search ,
+                                    'Site.cat_id5' => $search))));
         }
         //$search = 3;
         //$result = $this->Site->find('all', array());

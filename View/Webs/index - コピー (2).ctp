@@ -51,6 +51,8 @@
         <!--<div class="col-sm-3 col-sm-offset-1">-->
         <div class="sites index col-md-4" style="background-color : #FFAADD">
             <table cellpadding="0" cellspacing="0" class="table table-hover table-striped">
+
+
                 <tbody>
                     <?php //foreach ($sites as $site): ?>
                     <?php foreach ($sites as $key => $site): 
@@ -59,48 +61,46 @@
                     continue;
                     }
                     ?>
-                    <!--<table border="7" bordercolor="red" style="margin:20px;border-color:#6495ed ; border-style:ridge; border-width:5px ;">-->
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-<!--                            <tr>-->
-                                                          
-                                    <!--                                <img src="img/php.jpg"width="100"height="100">                          -->
 
-                                    <?php
-                                    $imgid = $site['Site']['id'];
-                                    //echo $this->Html->image("../img/{$imgid}.jpg",array('url'=>$site['Site']['url'],'target' => '_blank'));      //画像にURLのリンクを貼る
-                                    echo $this->Html->link(
-                                    $this->Html->image("../img/{$imgid}.jpg"),
-                                    $site['Site']['url'],
-                                    array('escape' => false,'target' => '_blank')            
-                                    );
-                                    ?>
+                    <table border="7" bordercolor="red" style="margin:20px;border-color:#6495ed ; border-style:ridge; border-width:5px ;">
+                        
+                        <tr>
+                            <tr>                           
+                                <!--                                <img src="img/php.jpg"width="100"height="100">                          -->
 
-                                    <!--                                <a href="<?php $site['Site']['url'] ?>" target="_blank"><img src="<?php echo $file2 ?>"></a><br>-->
-                                <br>
+                                <?php
+                                $imgid = $site['Site']['id'];
+                                //echo $this->Html->image("../img/{$imgid}.jpg",array('url'=>$site['Site']['url'],'target' => '_blank'));      //画像にURLのリンクを貼る
+                                echo $this->Html->link(
+                                 $this->Html->image("../img/{$imgid}.jpg"),
+                                $site['Site']['url'],
+                                 array('escape' => false,'target' => '_blank')
+                                );
+                                ?>
 
-                                
-                                   <?php echo h($site['Site']['review']); ?>&nbsp;
-                                <br>
+                                <!--                                <a href="<?php $site['Site']['url'] ?>" target="_blank"><img src="<?php echo $file2 ?>"></a><br>-->
+                            </tr>
 
-                                <!--                        <th><a href="http://qiita.com/BUN/items/403cccad9eaa831e6fd8"></a></th>
-                                                        <td><?php //echo h($site['Site']['cat_id1']); ?>&nbsp;</td>
-                                                        <td><?php //echo h($site['Site']['cat_id2']); ?>&nbsp;</td>
-                                                        <td><?php //echo h($site['Site']['cat_id3']); ?>&nbsp;</td>
-                                                        <td><?php //echo h($site['Site']['cat_id4']); ?>&nbsp;</td>
-                                                        <td><?php //echo h($site['Site']['cat_id5']); ?>&nbsp;</td>-->
+                            <tr>
+                                <td><?php echo h($site['Site']['review']); ?>&nbsp;</td>
+                            </tr>
 
-                                
-                                    
-                                        <?php echo $this->Html->link("詳細", array('action' => 'view', $site['Site']['id'])); ?>
-                                        <!--<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $site['Site']['id'])); ?>-->
-                                        <!--<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $site['Site']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $site['Site']['id']))); ?>-->
-                                    
-                                
-                            <!--</tr>-->
-                        </div>
-                    </div>
-                    <!--</table>-->
+                            <!--                        <th><a href="http://qiita.com/BUN/items/403cccad9eaa831e6fd8"></a></th>
+                                                    <td><?php //echo h($site['Site']['cat_id1']); ?>&nbsp;</td>
+                                                    <td><?php //echo h($site['Site']['cat_id2']); ?>&nbsp;</td>
+                                                    <td><?php //echo h($site['Site']['cat_id3']); ?>&nbsp;</td>
+                                                    <td><?php //echo h($site['Site']['cat_id4']); ?>&nbsp;</td>
+                                                    <td><?php //echo h($site['Site']['cat_id5']); ?>&nbsp;</td>-->
+
+                            <tr>
+                                <td class="actions">
+                                    <?php echo $this->Html->link(__('View'), array('action' => 'view', $site['Site']['id'])); ?>
+                                    <!--<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $site['Site']['id'])); ?>-->
+                                    <!--<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $site['Site']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $site['Site']['id']))); ?>-->
+                                </td>
+                            </tr>
+                        </tr>
+                    </table>
                     <?php endforeach; ?>
                 </tbody>
             </table>

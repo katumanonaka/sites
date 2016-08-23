@@ -25,7 +25,7 @@
 		<dt><?php echo __('Url'); ?></dt>
 		<dd>
 			<?php echo h($site['Site']['url']);?>
-                        <?php echo $this->Html->link('サイトへジャンプ！',$site['Site']['url']); ?>
+                        <?php echo $this->Html->link('サイトへジャンプ！',$site['Site']['url'], array('target' => '_blank')); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Review'); ?></dt>

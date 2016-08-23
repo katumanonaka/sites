@@ -114,7 +114,7 @@ class SitesController extends AppController {
             $imgname = $this->request->data('Site.img_src.name');
             //ファイルパスを保存
             $uploaddir = "C:" . DS . "xampp" . DS . "htdocs" . DS . "sites" . DS . "webroot" . DS . "upimg" . DS;
-            
+
             //idを取得する
             $iddata = $this->request->data('Site.id');
             //画像のファイルパス
@@ -129,22 +129,23 @@ class SitesController extends AppController {
             $this->set('categorydata', $request);
 
             $this->Site->create();
-                   
+
             //保存
             if ($this->Site->save($request)) {                      //保存する    
                 //idの取得
                 $id = $this->Site->getLastInsertID();
                 //結果的に使う画像を保存
                 $uploadfile = $uploaddir . "$id.jpg"; //basename($imgname);
-                
                 //ファイル移動
                 move_uploaded_file($img, $uploadfile);   //.$fileName['img']    //$fileName[
                 //画像の名前を更新
                 $this->Site->id = $id;
                 $this->Site->saveField('img_src', "$id.jpg");
                 
-                $this->Flash->success(__('The site has been saved.'));      //保存できた                
+                $this->Flash->success(__('The site has been saved.'));      //保存できた      
+                
                 return $this->redirect(array('action' => 'index'));
+
             } else {
                 $this->Flash->error(__('The site could not be saved. Please, try again.'));
             }
@@ -178,6 +179,25 @@ class SitesController extends AppController {
         $this->set('editcategory', $data);
 
         if ($this->request->is(array('post', 'put'))) {
+
+            //--------------------------------------------------------------------------
+            //画像を加工して保存する
+            //--------------------------------------------------------------------------
+            $idedit = $this->request->data('Site.id');
+            $file1 = "upimg/{$idedit}.jpg";                              //　元画像ファイル
+            $file2 = "img/{$idedit}.jpg";                                      //　画像保存先
+            $in = ImageCreateFromJPEG($file1);                          //　元画像ファイル読み込み
+            $size = GetImageSize($file1);                               //　元画像サイズ取得
+            //$width = $size[0] / 2;                                      //　生成する画像サイズ（横）
+            //$height = $size[1] / 2;                                     //　生成する画像サイズ（縦）
+            $width = 250; //$size[0] / 2;                                      //　生成する画像サイズ（横）
+            $height = 250; //$size[1] / 2;                                     //　生成する画像サイズ（縦）
+            $out = ImageCreateTrueColor($width, $height);               //　画像生成
+            ImageCopyResampled($out, $in, 0, 0, 0, 0, $width, $height, $size[0], $size[1]);    //　サイズ変更・コピー
+            ImageJPEG($out, $file2);                                    //　画像保存
+            ImageDestroy($in);
+            ImageDestroy($out);
+
             //サイト名、サイト写真、URL、レビューの変更
             $site_name = $this->request->data('Site.site_name');
             $img_src = $this->request->data('Site.img_src');
@@ -204,7 +224,7 @@ class SitesController extends AppController {
             $request['Site']['cat_id3'] = $test03;
             $request['Site']['cat_id4'] = $test04;
             $request['Site']['cat_id5'] = $test05;
-            
+
             //========================================================================================
             //画像データ保存
             //========================================================================================
@@ -227,10 +247,9 @@ class SitesController extends AppController {
             $request['Site']['img_src'] = "$iddata.jpg";
             //結果的に使う画像を保存
             $uploadfile = $uploaddir . "$iddata.jpg"; //basename($imgname);
-                
             //画像をファイル移動してID.jpgとして保存している
             move_uploaded_file($img, $uploadfile);   //.$fileName['img']    //$fileName[
-            
+
             $this->set('editcategory', $data);
             // if ($this->request->is(array('post', 'put'))) {                 //データを受け取る
             //if ($this->Site->save($this->request->data)) {          //データをセーブ

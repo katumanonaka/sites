@@ -3,4 +3,6 @@
 /lib/Cake/Console/Templates/skel/tmp/
 .DS_Store
 *.swp
+webroot/upimg/
+webroot/img/
 Config/database.php
