@@ -2,6 +2,7 @@
 
 App::uses('AppController', 'Controller');
 
+//App::uses('SimplePasswordHasher', 'Controller/Component/Auth');
 /**
  * Sites Controller
  *
@@ -10,13 +11,14 @@ App::uses('AppController', 'Controller');
  */
 //グローバル変数
 class SitesController extends AppController {
-
+    // Securityコンポーネント
+    //var $components = array('Security');
     /**
      * Components
      *
      * @var array
      */
-    public $components = array('Paginator');
+    public $components1 = array('Paginator');
     //Categoryを宣言
     public $uses = array('Category', 'Site');
 
@@ -25,6 +27,34 @@ class SitesController extends AppController {
      *
      * @return void
      */
+    
+    //public $components = array('Auth');
+ 
+//    public $components = array(
+//        'Auth' => array(
+//            'authenticate' => array('Basic')
+//        )
+//    );
+
+//    public function beforeFilter() {
+//        $passwordHasher = new AppController();
+//        echo $passwordHasher->hash('password');
+//        exit;
+//    }
+     public $components = array('Session','Auth');
+    
+    public function beforeFilter() { 
+        parent::beforeFilter();
+        
+        //Basic Auth
+        $this->Auth->authenticate = array('Basic');
+    }
+    
+      public function beforeSave($options = array()) {
+        $this->data['User']['password'] = AuthComponent::password($this->data['User']['password']);
+        //parent::beforeSave($options);
+        return true;
+    }
     public function index() {
         //$this->Site->recursive = 0;
         //$this->set('sites', $this->Paginator->paginate());
@@ -285,7 +315,20 @@ class SitesController extends AppController {
         }
         return $this->redirect(array('action' => 'index'));
     }
-
+    
+//     function beforeFilter() {
+//    parent::beforeFilter();
+// 
+//    // Basic認証の設定
+//    $this->Security->loginOptions = array('type' => 'basic');
+// 
+//    // ユーザー名、パスワードの設定（複数可能）
+//    $this->Security->loginUsers = array('hoge' => 'password');
+// 
+//    // 全てのアクションに設定
+//    $this->Security->requireLogin(array('Hoge'=>'index'));
+//    }
+    
 }
-
+    
 ?>

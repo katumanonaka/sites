@@ -74,8 +74,7 @@
 
                             <!--                                <a href="<?php $site['Site']['url'] ?>" target="_blank"><img src="<?php echo $file2 ?>"></a><br>-->
                             <br>
-
-
+                               
                                 <?php echo h($site['Site']['review']); ?>&nbsp;
                                 <br>
 
