@@ -1,6 +1,7 @@
-<div class="sites index">
+<div class="row">
+<div class="sites index col-md-8">
 	<h2><?php echo __('Sites'); ?></h2>
-	<table cellpadding="0" cellspacing="0">
+	<table cellpadding="0" cellspacing="0" class="table table-hover table-striped">
 	<thead>
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
@@ -66,11 +67,12 @@
 	?>
 	</div>
 </div>
-<div class="actions">
+<div class="actions col-md-4">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('New Site'), array('action' => 'add')); ?></li>
+		<li><?php echo $this->Html->link(__('New Site'), array('action' => 'add'), array('class'=>'btn btn-success')); ?></li>
 		<li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
 		<li><?php echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
 	</ul>
+</div>
 </div>

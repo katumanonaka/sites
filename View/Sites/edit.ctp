@@ -1,11 +1,22 @@
 <div class="sites form">
-<?php echo $this->Form->create('Site'); ?>
-	<fieldset>
-		<legend><?php echo __('Edit Site'); ?></legend>
+<?php echo $this->Form->create('Site',array ('enctype' => 'multipart/form-data')); ?>   //バイナリデータも送る
+    <fieldset>
+        <legend><?php echo __('Edit Site'); ?></legend>
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('site_name');
-		echo $this->Form->input('img_src');
+                
+                //画像を選択する
+                echo $this->Form->input('img_src',array(
+                            'type'=>'file',
+                            'div'=>false,
+                            //'required'=>'required',
+                            ));
+                
+                //echo $html->image('test.jpg',array('alt' =>'あるとを記述'));
+                $id = $editcategory['Site']['id'];
+                echo $this->Html->image("../upimg/{$id}.jpg", array('alt' => '画像がありません'));
+                
 		echo $this->Form->input('url');
 		echo $this->Form->input('review');
                 //チェックボックスの内容表示
@@ -25,29 +36,20 @@
                                             $editcategory['Site']['cat_id4'],
                                             $editcategory['Site']['cat_id5']),
                         ));
-                
-                
-                
-                
-//                if($editcategory['Site']['cat_id1'] == 1)
-//                {
-//                    
-//                }
-
                 //debug($editcategory['Site']['cat_id1']);
                 //exit;
                 
 	?>
-	</fieldset>
+    </fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+    <h3><?php echo __('Actions'); ?></h3>
+    <ul>
 
-		<li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Site.id')), array('confirm' => __('Are you sure you want to delete # %s?', $this->Form->value('Site.id')))); ?></li>
-		<li><?php echo $this->Html->link(__('List Sites'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
-	</ul>
+        <li><?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Site.id')), array('confirm' => __('Are you sure you want to delete # %s?', $this->Form->value('Site.id')))); ?></li>
+        <li><?php echo $this->Html->link(__('List Sites'), array('action' => 'index')); ?></li>
+        <li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
+        <li><?php echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
+    </ul>
 </div>

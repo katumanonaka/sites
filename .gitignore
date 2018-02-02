@@ -1,6 +1,8 @@
 /nbproject/private/
-/app/tmp/
+/tmp/
 /lib/Cake/Console/Templates/skel/tmp/
 .DS_Store
 *.swp
-app/Config/database.php
+webroot/upimg/
+webroot/img/
+Config/database.php

@@ -1,11 +1,20 @@
 <div class="sites form">
-<?php echo $this->Form->create('Site'); ?>
-	<fieldset>
-		<legend><?php echo __('Add Site'); ?></legend>
+<?php echo $this->Form->create('Site',array ('enctype' => 'multipart/form-data')); ?>   //バイナリデータも送る
+    <fieldset>
+        <legend><?php echo __('Add Site'); ?></legend>
 	<?php
 		echo $this->Form->input('site_name');
-		echo $this->Form->input('img_src');
-		echo $this->Form->input('url');
+		
+                //画像を選択する
+                echo $this->Form->input('img_src',array(
+                            'type'=>'file',
+                            'div'=>false,
+                            'required'=>'required',
+                            ));
+                
+                //echo $this->Form->input('img_src');
+                
+                echo $this->Form->input('url');
 		echo $this->Form->input('review');
                /* 
                 echo $this->Form->input( 'yesno', array( 
@@ -32,21 +41,21 @@
                 ));
                 
                 //  echo $this->Form->create('User', array('type' => 'get'));
-                  //  echo $this->Form->checkbox('done');
+                //  echo $this->Form->checkbox('done');
                     
-                 //   echo $this->Form->checkbox('done', array('value' => 555));
+                //   echo $this->Form->checkbox('done', array('value' => 555));
                     
       
 	?>
-	</fieldset>
+    </fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>
 <div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+    <h3><?php echo __('Actions'); ?></h3>
+    <ul>
 
-		<li><?php echo $this->Html->link(__('List Sites'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
-	</ul>
+        <li><?php echo $this->Html->link(__('List Sites'), array('action' => 'index')); ?></li>
+        <li><?php echo $this->Html->link(__('List Categories'), array('controller' => 'categories', 'action' => 'index')); ?> </li>
+        <li><?php echo $this->Html->link(__('New Category'), array('controller' => 'categories', 'action' => 'add')); ?> </li>
+    </ul>
 </div>
